@@ -10,9 +10,11 @@ The endpoint ULR => http://localhost:8081/api/v1/report/get-by-range takes POST 
 It take a date range filter as a json RequestBody like this:
 
 {
+
     "startDate": "2023-03-16",
      "endDate": "2023-03-17"
-}  
+     
+}
 
 Then the API returns following fields:
 
@@ -25,10 +27,12 @@ Then the API returns following fields:
 The respones =>
 
 {
+
         "date": "2023-03-17",
         "totalOrderCount": 3,
         "totalOrderAmount": 1200.0
+        
 }
 
 ____
-You can find details on how to run project on the [Inventory / Sales Management App](https://github.com/Amy-Oji/sales-inventory-manager-REST-API-application) page.
+Details on how to run project is on the [Inventory / Sales Management App](https://github.com/Amy-Oji/sales-inventory-manager-REST-API-application) page.
