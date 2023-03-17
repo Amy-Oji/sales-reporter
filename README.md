@@ -34,5 +34,8 @@ The respones =>
         
 }
 
+Or an empty array if orders have not been made on the Sales Management App
+
 ____
-Details on how to run project is on the [Inventory / Sales Management App](https://github.com/Amy-Oji/sales-inventory-manager-REST-API-application) page.
+
+More details on how to run the project is on the [Inventory / Sales Management App](https://github.com/Amy-Oji/sales-inventory-manager-REST-API-application) page.
