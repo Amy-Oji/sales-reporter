@@ -1,4 +1,4 @@
-# kafka-reporter 
+# sales-reporter 
 Report Application powered by Spring Boot that subscribes to 
 Kafka and consumes Order Creation response from this [Inventory / Sales Management App](https://github.com/Amy-Oji/sales-inventory-manager-REST-API-application) and persists the data.
 
