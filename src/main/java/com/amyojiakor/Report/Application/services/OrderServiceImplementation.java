@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -50,8 +49,8 @@ public class OrderServiceImplementation implements OrderService{
         order.setCustomerName(customerOrderResponse.getCustomerOrderDTO().getCustomerName());
         order.setCustomerNum(customerOrderResponse.getCustomerOrderDTO().getCustomerPhoneNum());
 
-        var orderProducts = customerOrderResponse.getCustomerOrderDTO().getProducts();
-        var productDetails = customerOrderResponse.getProductDetails();
+        Map<Long, Integer> orderProducts = customerOrderResponse.getCustomerOrderDTO().getProducts();
+        Map<Long, Double> productDetails = customerOrderResponse.getProductDetails();
         List<Product> productList = new ArrayList<>();
 
         for (Map.Entry<Long, Integer> orderProduct : orderProducts.entrySet()) {
@@ -67,11 +66,9 @@ public class OrderServiceImplementation implements OrderService{
                     product.setOrder(order);
                     productList.add(product);
             }
-
             order.setOrder_date(LocalDate.from(customerOrderResponse.getOrder_date()));
             order.setProducts(productList);
             order.setSum(customerOrderResponse.getSum());
-
             orderRepository.save(order);
         }
     }

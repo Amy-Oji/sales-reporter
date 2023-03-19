@@ -15,7 +15,7 @@ public class ReportController {
     @Autowired
     OrderService orderService;
     @PostMapping("get-by-range")
-    public ResponseEntity<?> createProduct(@RequestBody OrderReportDTO orderReportDTO){
+    public ResponseEntity<?> getOrderReportByDateRange(@RequestBody OrderReportDTO orderReportDTO){
 
         return ResponseEntity.ok(orderService.getOrderReportByDateRange(orderReportDTO));
     }
