@@ -59,12 +59,13 @@ public class OrderServiceImplementation implements OrderService{
 
             for (Map.Entry<Long, Double> productDetail : productDetails.entrySet()) {
                 Product product = new Product();
-                if (Objects.equals(productId, productDetail.getKey()))
+                if (Objects.equals(productId, productDetail.getKey())) {
                     product.setQuantityOrdered(quantity);
                     product.setIDFromInventoryApp(orderProduct.getKey());
                     product.setPricePerUnit(productDetail.getValue());
                     product.setOrder(order);
                     productList.add(product);
+                }
             }
             order.setOrder_date(LocalDate.from(customerOrderResponse.getOrder_date()));
             order.setProducts(productList);
@@ -72,5 +73,4 @@ public class OrderServiceImplementation implements OrderService{
             orderRepository.save(order);
         }
     }
-
 }
