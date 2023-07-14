@@ -1,11 +1,11 @@
-# kafka-reporter 
+# sales-reporter 
 Report Application powered by Spring Boot that subscribes to 
 Kafka and consumes Order Creation response from this [Inventory / Sales Management App](https://github.com/Amy-Oji/sales-inventory-manager-REST-API-application) and persists the data.
 
 
 The app also exposes a REST API endpoint that returns an Order report that is grouped by date.
 
-The endpoint ULR => http://localhost:8081/api/v1/report/get-by-range takes POST request.
+The endpoint ULR => http://localhost:8081/api/v1/report/get-by-range takes a POST request.
 
 It takes a date range filter as a json RequestBody like this:
 
